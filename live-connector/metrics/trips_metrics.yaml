@@ -1,0 +1,121 @@
+# Metrics view YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/metrics-views
+# This file was generated using AI.
+
+version: 1
+type: metrics_view
+
+display_name: Trips Metrics
+model: trips
+timeseries: pickup_datetime
+
+dimensions:
+  - name: vendor_id
+    display_name: Vendor Id
+    column: vendor_id
+  - name: pickup_date
+    display_name: Pickup Date
+    column: pickup_date
+  - name: pickup_datetime
+    display_name: Pickup Datetime
+    column: pickup_datetime
+  - name: dropoff_date
+    display_name: Dropoff Date
+    column: dropoff_date
+  - name: dropoff_datetime
+    display_name: Dropoff Datetime
+    column: dropoff_datetime
+  - name: payment_type
+    display_name: Payment Type
+    column: payment_type
+  - name: pickup
+    display_name: Pickup
+    column: pickup
+  - name: dropoff
+    display_name: Dropoff
+    column: dropoff
+  - name: cab_type
+    display_name: Cab Type
+    column: cab_type
+  - name: pickup_ct2010
+    display_name: Pickup Ct2010
+    column: pickup_ct2010
+  - name: pickup_boroct2010
+    display_name: Pickup Boroct2010
+    column: pickup_boroct2010
+  - name: pickup_cdeligibil
+    display_name: Pickup Cdeligibil
+    column: pickup_cdeligibil
+  - name: pickup_ntacode
+    display_name: Pickup Ntacode
+    column: pickup_ntacode
+  - name: pickup_ntaname
+    display_name: Pickup Ntaname
+    column: pickup_ntaname
+  - name: dropoff_ct2010
+    display_name: Dropoff Ct2010
+    column: dropoff_ct2010
+  - name: dropoff_boroct2010
+    display_name: Dropoff Boroct2010
+    column: dropoff_boroct2010
+  - name: dropoff_cdeligibil
+    display_name: Dropoff Cdeligibil
+    column: dropoff_cdeligibil
+  - name: dropoff_ntacode
+    display_name: Dropoff Ntacode
+    column: dropoff_ntacode
+  - name: dropoff_ntaname
+    display_name: Dropoff Ntaname
+    column: dropoff_ntaname
+
+measures:
+  - name: total_trips_measure
+    display_name: Total Trips
+    expression: COUNT(trip_id)
+    description: Total number of trips recorded in the dataset.
+    format_preset: humanize
+  - name: average_trip_distance_measure
+    display_name: Average Trip Distance
+    expression: AVG(trip_distance)
+    description: Average distance traveled per trip.
+    format_preset: humanize
+  - name: total_fare_amount_measure
+    display_name: Total Fare Amount
+    expression: SUM(fare_amount)
+    description: Sum of all fare amounts for all trips.
+    format_preset: humanize
+  - name: average_fare_amount_measure
+    display_name: Average Fare Amount
+    expression: AVG(fare_amount)
+    description: Average fare amount per trip.
+    format_preset: humanize
+  - name: total_tip_amount_measure
+    display_name: Total Tip Amount
+    expression: SUM(tip_amount)
+    description: Total sum of tips given across all trips.
+    format_preset: humanize
+  - name: average_tip_amount_measure
+    display_name: Average Tip Amount
+    expression: AVG(tip_amount)
+    description: Average tip amount per trip.
+    format_preset: humanize
+  - name: total_passengers_measure
+    display_name: Total Passengers
+    expression: SUM(passenger_count)
+    description: Total number of passengers transported.
+    format_preset: humanize
+  - name: average_passenger_count_measure
+    display_name: Average Passenger Count
+    expression: AVG(passenger_count)
+    description: Average number of passengers per trip.
+    format_preset: humanize
+  - name: max_trip_distance_measure
+    display_name: Maximum Trip Distance
+    expression: MAX(trip_distance)
+    description: The longest distance recorded for a single trip.
+    format_preset: humanize
+  - name: average_total_amount_measure
+    display_name: Average Total Amount
+    expression: AVG(total_amount)
+    description: Average total amount charged per trip, including all fees and surcharges.
+    format_preset: humanize

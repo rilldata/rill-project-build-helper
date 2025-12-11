@@ -1,0 +1,26 @@
+# Change the filename to .env
+
+gcs_google_application_credentials=
+gcs_key_id=
+gcs_secret=
+bigquery_google_application_credentials=
+
+athena_aws_access_key_id=
+athena_aws_secret_access_key=
+s3_aws_access_key_id=
+s3_aws_secret_access_key=
+redshift_access_key_id=
+redshift_secret_access_key=
+
+azure_storage_sas_token=
+azure_storage_key=
+azure_STORAGE_CONNECTION_STRING=
+
+https_token=
+
+postgres_password=
+
+mysql_password=
+
+snowflake_password=
+snowflake_dsn

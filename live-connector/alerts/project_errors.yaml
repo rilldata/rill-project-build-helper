@@ -1,0 +1,18 @@
+# Alerts YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/alerts
+type: alert
+
+refresh:
+  cron: "*/10 * * * *"
+  disable: true
+
+data:
+  resource_status:
+    where_error: true
+
+renotify: true
+renotify_after: 24h
+
+notify:
+  slack:
+    channels: ["#rill-cloud-alerts"]
