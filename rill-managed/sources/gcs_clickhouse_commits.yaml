@@ -1,0 +1,24 @@
+# Model YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/models
+
+type: model
+materialize: true
+
+incremental: true
+refresh:
+   cron: "0 0 * * *"
+   disable: false
+
+connector: duckdb
+
+partitions:
+  glob: gs://rilldata-public/github-analytics/Clickhouse/**/commits_*.parquet
+
+sql: |
+  select * from read_parquet('{{.partition.uri}}')
+
+output:
+  connector: duckdb
+  table: gcs_clickhouse_commits
+  incremental_strategy: merge
+  unique_key: commit_hash

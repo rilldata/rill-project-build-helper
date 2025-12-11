@@ -1,0 +1,13 @@
+# Connector YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/connectors
+  
+type: connector
+
+driver: snowflake
+account: "account"
+user: "default"
+password: "{{ .env.snowflake_password }}"
+database: "database"
+schema: "schema"
+warehouse: "warehouse"
+role: "role"

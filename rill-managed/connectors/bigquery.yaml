@@ -1,0 +1,9 @@
+# Connector YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/connectors
+# BigQuery Docs: https://docs.rilldata.com/build/connectors/data-source/bigquery
+
+type: connector
+
+driver: bigquery
+project_id: "project_id"
+google_application_credentials: "{{ .env.bigquery_google_application_credentials }}"

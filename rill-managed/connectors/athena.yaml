@@ -1,0 +1,10 @@
+# Connector YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/connectors
+# Athena Docs: https://docs.rilldata.com/build/connectors/data-source/athena
+type: connector
+
+driver: athena
+aws_access_key_id: "{{ .env.athena_aws_access_key_id }}"
+aws_secret_access_key: "{{ .env.athena_aws_secret_access_key }}"
+output_location: "s3://output-bucket/location"
+region: "us-east-1"

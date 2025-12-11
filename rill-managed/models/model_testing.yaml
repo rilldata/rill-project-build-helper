@@ -1,0 +1,8 @@
+type: model
+
+# Uncomment out the test lines to see the model validation fail.
+tests:
+  # - name: force_fail
+  #   sql: SELECT * FROM gcs_clickhouse_commits WHERE project_name = 'Clickhouse'
+
+sql: select * from gcs_clickhouse_commits

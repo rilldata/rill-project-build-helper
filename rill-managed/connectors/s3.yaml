@@ -1,0 +1,9 @@
+# Connector YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/connectors
+# s3 Docs: https://docs.rilldata.com/build/connectors/data-source/s3
+
+type: connector
+driver: s3 
+
+aws_access_key_id: '{{.env.s3_aws_access_key_id}}'
+aws_secret_access_key: '{{.env.s3_aws_secret_access_key}}'

@@ -1,0 +1,13 @@
+# Connector YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/connectors
+# MySQL Docs: https://docs.rilldata.com/build/connectors/data-source/mysql
+
+type: connector 
+driver: mysql 
+
+host: "localhost" 
+port: 3306 
+database: "testdb" 
+user: "testuser" 
+password: "testpassword" 
+ssl_mode: "DISABLED" 

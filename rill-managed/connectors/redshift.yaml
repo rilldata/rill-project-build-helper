@@ -1,0 +1,11 @@
+# Connector YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/connectors
+# Redshift Docs: https://docs.rilldata.com/build/connectors/data-source/redshift
+
+
+type: connector
+
+driver: redshift
+aws_access_key_id: "{{ .env.redshift_access_key_id }}"
+aws_secret_access_key: "{{ .env.redshift_secret_access_key }}"
+database: "dev"

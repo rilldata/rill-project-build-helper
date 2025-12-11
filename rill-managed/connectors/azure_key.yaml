@@ -1,0 +1,10 @@
+# Connector YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/connectors
+# Azure Docs: https://docs.rilldata.com/build/connectors/data-source/azure
+ 
+type: connector
+
+driver: azure
+
+azure_storage_account: rilldata
+azure_storage_key: '{{.env.azure_storage_key}}'

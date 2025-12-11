@@ -1,0 +1,26 @@
+# Model YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/models
+
+type: model
+materialize: true
+
+incremental: true
+refresh:
+   cron: "0 0 * * *"
+   disable: false
+   
+connector: mysql
+
+partitions:
+  connector: mysql
+  sql: |
+    SELECT DISTINCT DATE(order_ts) AS order_day
+    FROM orders_demo
+
+
+sql: select * from testdb.orders_demo
+  WHERE DATE(order_ts) = '{{ .partition.order_day }}'
+
+output:
+  connector: duckdb
+  table: mysql_orders

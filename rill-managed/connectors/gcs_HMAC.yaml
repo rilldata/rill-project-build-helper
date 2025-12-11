@@ -1,0 +1,11 @@
+# Connector YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/connectors
+# GCS Docs: https://docs.rilldata.com/build/connectors/data-source/gcs
+  
+type: connector
+
+driver: gcs
+
+key_id: '{{.env.gcs_key_id}}'
+secret: '{{.env.gcs_secret}}'
+

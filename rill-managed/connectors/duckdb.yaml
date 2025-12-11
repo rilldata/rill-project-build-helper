@@ -1,0 +1,9 @@
+# Connector YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/connectors
+# DuckDB Docs: https://docs.rilldata.com/build/connectors/olap/duckdb
+
+type: connector
+
+driver: duckdb
+managed: true
+mode: readwrite

@@ -1,0 +1,10 @@
+# Connector YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/connectors
+# GCS Docs: https://docs.rilldata.com/build/connectors/data-source/gcs
+
+type: connector
+
+driver: gcs
+
+google_application_credentials:  '{{.env.gcs_google_application_credentials}}'
+

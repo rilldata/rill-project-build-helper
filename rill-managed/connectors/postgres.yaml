@@ -1,0 +1,12 @@
+# Connector YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/connectors
+# PostgreSQL Docs: https://docs.rilldata.com/build/connectors/data-source/postgres
+
+type: connector
+
+driver: postgres
+host: "localhost"
+port: "5432"
+user: "postgres"
+password: "{{ .env.postgres_password }}"
+dbname: "postgres"
