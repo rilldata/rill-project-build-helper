@@ -1,0 +1,85 @@
+# Metrics view YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/metrics-views
+# This file was generated using AI.
+
+version: 1
+type: metrics_view 
+
+display_name: Model Testing Metrics
+model: model_testing
+timeseries: author_date
+
+# annotations:
+#   - model: annotations_auction
+#     name: auction_annotations
+#     measures: ['requests']
+
+# security:
+#   access: "{{ .user.admin }} OR '{{ .user.domain }}' == 'example.com'"
+#   row_filter: region = '{{ .user.region }}'
+
+
+dimensions:
+  - name: commit_hash
+    display_name: Commit Hash
+    column: commit_hash
+  - name: project_name
+    display_name: Project Name
+    column: project_name
+  - name: commit_msg
+    display_name: Commit Msg
+    column: commit_msg
+  - name: author_name
+    display_name: Author Name
+    column: author_name
+  - name: author_email
+    display_name: Author Email
+    column: author_email
+  - name: author_date
+    display_name: Author Date
+    column: author_date
+  - name: merge
+    display_name: Merge
+    column: merge
+
+measures:
+  - name: total_commits_measure
+    display_name: Total Commits
+    expression: COUNT(*)
+    description: Total number of commits in the model_testing table.
+    format_preset: humanize
+  - name: unique_projects_measure
+    display_name: Unique Projects
+    expression: COUNT(DISTINCT project_name)
+    description: Number of unique projects represented in the model_testing table.
+    format_preset: humanize
+  - name: unique_authors_measure
+    display_name: Unique Authors
+    expression: COUNT(DISTINCT author_email)
+    description: Number of unique authors who have made commits.
+    format_preset: humanize
+  - name: total_merges_measure
+    display_name: Total Merges
+    expression: SUM(CASE WHEN merge THEN 1 ELSE 0 END)
+    description: Total number of commits that are merges.
+    format_preset: humanize
+  - name: average_author_timezone_measure
+    display_name: Average Author Timezone
+    expression: AVG(author_timezone)
+    description: Average timezone offset of commit authors.
+    format_preset: humanize
+  - name: min_author_timezone_measure
+    display_name: Minimum Author Timezone
+    expression: MIN(author_timezone)
+    description: Minimum timezone offset among commit authors.
+    format_preset: humanize
+  - name: max_author_timezone_measure
+    display_name: Maximum Author Timezone
+    expression: MAX(author_timezone)
+    description: Maximum timezone offset among commit authors.
+    format_preset: humanize
+  - name: average_commit_message_length_measure
+    display_name: Average Commit Message Length
+    expression: AVG(LENGTH(commit_msg))
+    description: Average length of commit messages in the model_testing table.
+    format_preset: humanize

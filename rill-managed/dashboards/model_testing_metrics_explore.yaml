@@ -1,0 +1,10 @@
+# Explore YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/explore-dashboards
+
+type: explore
+
+display_name: "Model Testing Metrics dashboard"
+metrics_view: model_testing_metrics
+
+dimensions: '*'
+measures: '*'

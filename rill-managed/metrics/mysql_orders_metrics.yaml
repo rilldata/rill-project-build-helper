@@ -1,0 +1,95 @@
+# Metrics view YAML
+# Reference documentation: https://docs.rilldata.com/reference/project-files/metrics-views
+# This file was generated using AI.
+
+version: 1
+type: metrics_view 
+
+display_name: MySQL Orders Metrics
+model: mysql_orders
+timeseries: order_ts
+
+# annotations:
+#   - model: annotations_auction
+#     name: auction_annotations
+#     measures: ['requests']
+
+# security:
+#   access: "{{ .user.admin }} OR '{{ .user.domain }}' == 'example.com'"
+#   row_filter: region = '{{ .user.region }}'
+
+
+dimensions:
+  - name: __rill_partition
+    display_name: Rill Partition
+    column: __rill_partition
+  - name: email
+    display_name: Email
+    column: email
+  - name: customer_status
+    display_name: Customer Status
+    column: customer_status
+  - name: order_ts
+    display_name: Order Ts
+    column: order_ts
+  - name: order_date
+    display_name: Order Date
+    column: order_date
+  - name: channel
+    display_name: Channel
+    column: channel
+  - name: channel_group
+    display_name: Channel Group
+    column: channel_group
+
+measures:
+  - name: total_orders_measure
+    display_name: Total Orders
+    expression: COUNT(order_id)
+    description: Total number of orders placed.
+    format_preset: humanize
+  - name: unique_customers_measure
+    display_name: Unique Customers
+    expression: COUNT(DISTINCT customer_id)
+    description: Number of unique customers who placed orders.
+    format_preset: humanize
+  - name: total_gross_amount_measure
+    display_name: Total Gross Amount
+    expression: SUM(amount)
+    description: Total gross amount of all orders.
+    format_preset: humanize
+  - name: average_order_amount_measure
+    display_name: Average Order Amount
+    expression: AVG(amount)
+    description: Average gross amount per order.
+    format_preset: humanize
+  - name: total_discount_amount_measure
+    display_name: Total Discount Amount
+    expression: SUM(discount_amount)
+    description: Total discount amount applied to all orders.
+    format_preset: humanize
+  - name: average_discount_amount_measure
+    display_name: Average Discount Amount
+    expression: AVG(discount_amount)
+    description: Average discount amount per order.
+    format_preset: humanize
+  - name: total_net_revenue_measure
+    display_name: Total Net Revenue
+    expression: SUM(net_revenue)
+    description: Total net revenue from all orders.
+    format_preset: humanize
+  - name: average_net_revenue_measure
+    display_name: Average Net Revenue
+    expression: AVG(net_revenue)
+    description: Average net revenue per order.
+    format_preset: humanize
+  - name: min_order_amount_measure
+    display_name: Minimum Order Amount
+    expression: MIN(amount)
+    description: Minimum gross amount among all orders.
+    format_preset: humanize
+  - name: max_order_amount_measure
+    display_name: Maximum Order Amount
+    expression: MAX(amount)
+    description: Maximum gross amount among all orders.
+    format_preset: humanize
