@@ -25,12 +25,6 @@ rill-project-build-helper/
 └── README.md
 ```
 
-**Option A**→ use rill-managed/
-
-**Option B**→ use live-connector/
-
-Each folder contains its own rill.yaml, models/, sources/, dashboards/, and connectors/ with sample files.
-
 ---
 
 ##  Getting Started

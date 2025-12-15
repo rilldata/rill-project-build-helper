@@ -30,14 +30,14 @@ Each directory includes starter files with examples you can modify.
 ## ▶️ Running the Project
 
 ```bash
-npm install -g rill
+curl https://rill.sh | sh
 rill start
 ```
 
 Rill will launch a local development UI at:
 
 ```text
-http://localhost:9000
+http://localhost:9009
 ```
 
 Your dashboards, sources, and models will auto-reload as you modify them.
