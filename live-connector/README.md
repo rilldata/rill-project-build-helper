@@ -1,4 +1,4 @@
-# [live-connector](https://docs.rilldata.com/build/connectors/data-source)
+# [live-connector](https://docs.rilldata.com/build/connectors/olap)
 A Rill project demonstrating live data connectors with real-world examples and recommended folder structure.
 
 ---
